@@ -8,5 +8,5 @@ echo 'deb http://download.opensuse.org/repositories/home:/ungoogled_chromium/Deb
 curl -fsSL https://download.opensuse.org/repositories/home:ungoogled_chromium/Debian_Sid/Release.key | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/home_ungoogled_chromium.gpg > /dev/null
 sudo apt update
 sudo apt install ungoogled-chromium
-ln -sfn /usr/bin/chromium /usr/bin/chromium-browser
+ln -sfn /usr/bin/ungoogled-chromium /usr/bin/chromium-browser
 apt-get clean -y
