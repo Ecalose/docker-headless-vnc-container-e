@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-VERSION="115.0"
+VERSION="116.0"
 echo "Install Firefox $VERSION"
 
 function disableUpdate(){
