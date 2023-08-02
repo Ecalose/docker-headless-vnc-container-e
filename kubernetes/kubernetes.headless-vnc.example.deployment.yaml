@@ -15,26 +15,26 @@ spec:
     spec:
       terminationGracePeriodSeconds: 5
       containers:
-      - name: headless-vnc
-        image: consol/rocky-xfce-vnc
-        imagePullPolicy: Always
-        args:
-          ### make normal UI startup to connect via: oc rsh <pod-name> bash
-          #- '--tail-log'
-        ### checks that vnc server is up and running
-        livenessProbe:
-          tcpSocket:
-            port: 5901
-          initialDelaySeconds: 1
-          timeoutSeconds: 1
-        ### checks if http-vnc connection is working
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 6901
-            scheme: HTTP
-          initialDelaySeconds: 1
-          timeoutSeconds: 1
+        - name: headless-vnc
+          image: consol/rocky-xfce-vnc
+          imagePullPolicy: Always
+          args:
+            ### make normal UI startup to connect via: oc rsh <pod-name> bash
+            #- '--tail-log'
+          ### checks that vnc server is up and running
+          livenessProbe:
+            tcpSocket:
+              port: 5901
+            initialDelaySeconds: 1
+            timeoutSeconds: 1
+          ### checks if http-vnc connection is working
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 7860
+              scheme: HTTP
+            initialDelaySeconds: 1
+            timeoutSeconds: 1
 ---
 apiVersion: v1
 kind: Service
@@ -45,16 +45,16 @@ metadata:
 spec:
   externalName: headless-vnc
   ports:
-  - name: http-port-tcp
-    protocol: TCP
-    port: 6901
-    targetPort: 6901
-    nodePort: 32001
-  - name: vnc-port-tcp
-    protocol: TCP
-    port: 5901
-    targetPort: 5901
-    nodePort: 32002
+    - name: http-port-tcp
+      protocol: TCP
+      port: 7860
+      targetPort: 7860
+      nodePort: 32001
+    - name: vnc-port-tcp
+      protocol: TCP
+      port: 5901
+      targetPort: 5901
+      nodePort: 32002
   selector:
     application: headless-vnc
   type: NodePort

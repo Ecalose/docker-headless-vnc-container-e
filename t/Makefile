@@ -20,7 +20,7 @@ prepare:
 	docker ps
 	@while read LOGLINE; do \
 		echo "$${LOGLINE}"; \
-		[[ "$${LOGLINE}" == *"connect via"*":6901/?password="* ]] && exit 0; \
+		[[ "$${LOGLINE}" == *"connect via"*":7860/?password="* ]] && exit 0; \
 		[[ "$${LOGLINE}" == *"ERROR"* ]] && exit 1; \
 	done < <(docker-compose logs -f)
 

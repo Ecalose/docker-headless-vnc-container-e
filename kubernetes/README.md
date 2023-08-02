@@ -41,8 +41,8 @@ spec:
   ports:
   - name: http-port-tcp
     protocol: TCP
-    port: 6901
-    targetPort: 6901
+    port: 7860
+    targetPort: 7860
     nodePort: 32001
 #...
   selector:

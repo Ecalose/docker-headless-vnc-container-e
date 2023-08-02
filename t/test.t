@@ -32,7 +32,7 @@ for my $svc (sort keys %{$conf->{'services'}}) {
 			alarm(0);
 			fail($@) if $@;
 		}
-		elsif($remoteport eq "6901") {
+		elsif($remoteport eq "7860") {
 			# http test
 			eval {
 				alarm(3);

@@ -16,16 +16,16 @@ build-rocky-icewm-vnc:
 run: run-debian-xfce-vnc
 
 run-debian-xfce-vnc:
-	docker run -ti --rm -p 6901:6901 -p 5901:5901 local/debian-xfce-vnc
+	docker run -ti --rm -p 7860:7860 -p 5901:5901 local/debian-xfce-vnc
 
 run-debian-icewm-vnc:
-	docker run -ti --rm -p 6901:6901 -p 5901:5901 local/debian-icewm-vnc
+	docker run -ti --rm -p 7860:7860 -p 5901:5901 local/debian-icewm-vnc
 
 run-rocky-xfce-vnc:
-	docker run -ti --rm -p 6901:6901 -p 5901:5901 local/rocky-xfce-vnc
+	docker run -ti --rm -p 7860:7860 -p 5901:5901 local/rocky-xfce-vnc
 
 run-rocky-icewm-vnc:
-	docker run -ti --rm -p 6901:6901 -p 5901:5901 local/rocky-icewm-vnc
+	docker run -ti --rm -p 7860:7860 -p 5901:5901 local/rocky-icewm-vnc
 
 clean:
 	$(MAKE) -C t clean

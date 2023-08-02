@@ -8,7 +8,7 @@ services:
       dockerfile: "Dockerfile.debian-icewm-vnc"
     ports:
       - 127.0.99.13:5901:5901
-      - 127.0.99.13:6901:6901
+      - 127.0.99.13:7860:7860
   debian-xfce:
     image: "local/debian-xfce-vnc"
     build:
@@ -16,7 +16,7 @@ services:
       dockerfile: "Dockerfile.debian-xfce-vnc"
     ports:
       - 127.0.99.13:5902:5901
-      - 127.0.99.13:6902:6901
+      - 127.0.99.13:6902:7860
   rocky-icewm:
     image: "local/rocky-icewm-vnc"
     build:
@@ -24,7 +24,7 @@ services:
       dockerfile: "Dockerfile.rocky-icewm-vnc"
     ports:
       - 127.0.99.13:5903:5901
-      - 127.0.99.13:6903:6901
+      - 127.0.99.13:6903:7860
   rocky-xfce:
     image: "local/rocky-xfce-vnc"
     build:
@@ -32,4 +32,4 @@ services:
       dockerfile: "Dockerfile.rocky-xfce-vnc"
     ports:
       - 127.0.99.13:5904:5901
-      - 127.0.99.13:6904:6901
+      - 127.0.99.13:6904:7860

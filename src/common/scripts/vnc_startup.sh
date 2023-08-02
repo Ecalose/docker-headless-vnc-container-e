@@ -6,7 +6,7 @@ set -e
 help (){
 echo "
 USAGE:
-docker run -it -p 6901:6901 -p 5901:5901 consol/<image>:<tag> <option>
+docker run -it -p 7860:7860 -p 5901:5901 consol/<image>:<tag> <option>
 
 IMAGES:
 consol/debian-xfce-vnc
