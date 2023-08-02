@@ -38,6 +38,7 @@ jobs:
           - rocky-xfce-vnc
           - debian-icewm-vnc
           - debian-xfce-vnc
+          - debian12-xfce-vnc
     steps:
       - name: Check out the repo
         uses: actions/checkout@v3
