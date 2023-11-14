@@ -99,14 +99,14 @@ Add the `--user` flag to your docker run command:
 The following VNC environment variables can be overwritten at the `docker run` phase to customize your desktop environment inside the container:
 * `VNC_COL_DEPTH`, default: `24`
 * `VNC_RESOLUTION`, default: `1280x1024`
-* `VNC_PW`, default: `my-pw`
+* `MYPW`, default: `my-pw`
 * `VNC_PASSWORDLESS`, default: `<not set>`
 
 #### 3.1) Example: Override the VNC password
-Simply overwrite the value of the environment variable `VNC_PW`. For example in
+Simply overwrite the value of the environment variable `MYPW`. For example in
 the docker run command:
 
-    docker run -it -p 5901:5901 -p 7860:7860 -e VNC_PW=my-pw consol/rocky-xfce-vnc
+    docker run -it -p 5901:5901 -p 7860:7860 -e MYPW=my-pw consol/rocky-xfce-vnc
 
 #### 3.2) Example: Override the VNC resolution
 Simply overwrite the value of the environment variable `VNC_RESOLUTION`. For example in
@@ -122,7 +122,7 @@ before this. For example in the docker run command:
     docker run -it -p 5901:5901 -p 7860:7860 -e VNC_PASSWORDLESS=true consol/rocky-xfce-vnc
 
 ### 4) View only VNC
-Since version `1.2.0` it's possible to prevent unwanted control via VNC. Therefore you can set the environment variable `VNC_VIEW_ONLY=true`. If set, the startup script will create a random password for the control connection and use the value of `VNC_PW` for view only connection over the VNC connection.
+Since version `1.2.0` it's possible to prevent unwanted control via VNC. Therefore you can set the environment variable `VNC_VIEW_ONLY=true`. If set, the startup script will create a random password for the control connection and use the value of `MYPW` for view only connection over the VNC connection.
 
      docker run -it -p 5901:5901 -p 7860:7860 -e VNC_VIEW_ONLY=true consol/rocky-xfce-vnc
 
